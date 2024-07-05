@@ -355,8 +355,11 @@ import React from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import quran from "./assets/Quran.json/quran-uthmani.json";
 import quranAsadTranslation from "./assets/Quran.json/quranAsadTranslation.json";
-
+import { useFonts } from "expo-font";
 const QuranPage = () => {
+  const [fontLoaded] = useFonts({
+    ottoman: require("../assets/fonts/ottoman.ttf"),
+  });
   return (
     <ScrollView style={styles.container}>
       <View style={styles.header}>
