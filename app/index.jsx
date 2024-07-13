@@ -1,243 +1,255 @@
-// import React from "react";
-// import {
-//   View,
-//   Text,
-//   Image,
-//   TouchableOpacity,
-//   StyleSheet,
-//   ScrollView,
-// } from "react-native";
+import React from "react";
+import {
+  View,
+  Text,
+  Image,
+  TouchableOpacity,
+  StyleSheet,
+  ScrollView,
+} from "react-native";
+import { useRouter } from "expo-router";
 
-// const App = () => {
-//   return (
-//     <ScrollView style={styles.container}>
-//       <View style={styles.header}>
-//         <Text style={styles.time}>08:16</Text>
-//         <Image
-//           source={require("./assets/icons/battery.png")}
-//           style={styles.icon}
-//         />
-//       </View>
+const App = () => {
+  let router = useRouter();
+  return (
+    <ScrollView style={styles.container}>
+      <View style={styles.header}>
+        <Text style={styles.time}>08:16</Text>
+        <Image
+          source={require("./assets/icons/battery.png")}
+          style={styles.icon}
+        />
+      </View>
 
-//       <View style={styles.main}>
-//         <Text style={styles.zohr}>Zohr</Text>
-//         <Text style={styles.timeMain}>12:12</Text>
-//         <Text style={styles.date}>Dhu'l-Hijjah 26, 1445 AH*</Text>
-//         <Text style={styles.date}>Jul 03, 2024</Text>
-//         <Text style={styles.zohrStart}>Zohr starts in 3h 55m 13s</Text>
-//       </View>
+      <View style={styles.main}>
+        <Text style={styles.zohr}>Zohr</Text>
+        <Text style={styles.timeMain}>12:12</Text>
+        <Text style={styles.date}>Dhu'l-Hijjah 26, 1445 AH*</Text>
+        <Text style={styles.date}>Jul 03, 2024</Text>
+        <Text style={styles.zohrStart}>Zohr starts in 3h 55m 13s</Text>
+      </View>
 
-//       <View style={styles.grid}>
-//         <TouchableOpacity style={styles.gridItem}>
-//           <Image
-//             source={require("./assets/icons/readQuran.png")}
-//             style={styles.gridIcon}
-//           />
-//           <Text style={styles.gridText}>Read Quran</Text>
-//         </TouchableOpacity>
-//         <TouchableOpacity style={styles.gridItem}>
-//           <Image
-//             source={require("./assets/icons/hifz.png")}
-//             style={styles.gridIcon}
-//           />
-//           <Text style={styles.gridText}>Hifz</Text>
-//         </TouchableOpacity>
-//         <TouchableOpacity style={styles.gridItem}>
-//           <Image
-//             source={require("./assets/icons/qibla.png")}
-//             style={styles.gridIcon}
-//           />
-//           <Text style={styles.gridText}>Qibla Direction</Text>
-//         </TouchableOpacity>
-//         <TouchableOpacity style={styles.gridItem}>
-//           <Image
-//             source={require("./assets/icons/tajweed.png")}
-//             style={styles.gridIcon}
-//           />
-//           <Text style={styles.gridText}>Learn Tajweed</Text>
-//         </TouchableOpacity>
-//         <TouchableOpacity style={styles.gridItem}>
-//           <Image
-//             source={require("./assets/icons/prayerTimes.png")}
-//             style={styles.gridIcon}
-//           />
-//           <Text style={styles.gridText}>Prayer Times</Text>
-//         </TouchableOpacity>
-//         <TouchableOpacity style={styles.gridItem}>
-//           <Image
-//             source={require("./assets/icons/tasbeeh.png")}
-//             style={styles.gridIcon}
-//           />
-//           <Text style={styles.gridText}>Tasbeeh</Text>
-//         </TouchableOpacity>
-//         <TouchableOpacity style={styles.gridItem}>
-//           <Image
-//             source={require("./assets/icons/hijri.png")}
-//             style={styles.gridIcon}
-//           />
-//           <Text style={styles.gridText}>Hijri</Text>
-//         </TouchableOpacity>
-//         <TouchableOpacity style={styles.gridItem}>
-//           <Image
-//             source={require("./assets/icons/eQuran.png")}
-//             style={styles.gridIcon}
-//           />
-//           <Text style={styles.gridText}>E-Quran</Text>
-//         </TouchableOpacity>
-//       </View>
+      <View style={styles.grid}>
+        <TouchableOpacity
+          onPress={() => router.push("completeQuran")}
+          style={styles.gridItem}
+        >
+          <Image
+            source={require("./assets/icons/readQuran.png")}
+            style={styles.gridIcon}
+          />
 
-//       <View style={styles.engagement}>
-//         <Text style={styles.engagementTitle}>Quran Engagement Time</Text>
-//         <View style={styles.engagementContent}>
-//           <View style={styles.engagementItem}>
-//             <Text style={styles.engagementText}>Yours this week</Text>
-//             <Text style={styles.engagementTime}>1h 24m</Text>
-//             <Text style={styles.engagementLifetime}>Lifetime: 144h 16m</Text>
-//           </View>
-//           <View style={styles.engagementItem}>
-//             <Text style={styles.engagementText}>Sadqa Jaria Gift Pool</Text>
-//             <TouchableOpacity style={styles.giftButton}>
-//               <Text style={styles.giftButtonText}>Purchase Gifts</Text>
-//             </TouchableOpacity>
-//             <Text style={styles.engagementLifetime}>0 Quran copies gifted</Text>
-//           </View>
-//         </View>
-//       </View>
+          <Text style={styles.gridText}>Read Quran</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => router.push("another")}
+          style={styles.gridItem}
+        >
+          <Image
+            source={require("./assets/icons/hifz.png")}
+            style={styles.gridIcon}
+          />
+          <Text style={styles.gridText}>Hifz</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.gridItem}>
+          <Image
+            source={require("./assets/icons/qibla.png")}
+            style={styles.gridIcon}
+          />
+          <Text style={styles.gridText}>Qibla Direction</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.gridItem}>
+          <Image
+            source={require("./assets/icons/tajweed.png")}
+            style={styles.gridIcon}
+          />
+          <Text style={styles.gridText}>Learn Tajweed</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.gridItem}>
+          <Image
+            source={require("./assets/icons/prayerTimes.png")}
+            style={styles.gridIcon}
+          />
+          <Text style={styles.gridText}>Prayer Times</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.gridItem}>
+          <Image
+            source={require("./assets/icons/tasbeeh.png")}
+            style={styles.gridIcon}
+          />
+          <Text style={styles.gridText}>Tasbeeh</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.gridItem}>
+          <Image
+            source={require("./assets/icons/hijri.png")}
+            style={styles.gridIcon}
+          />
+          <Text style={styles.gridText}>Hijri</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.gridItem}>
+          <Image
+            source={require("./assets/icons/eQuran.png")}
+            style={styles.gridIcon}
+          />
+          <Text style={styles.gridText}>E-Quran</Text>
+        </TouchableOpacity>
+      </View>
 
-//       <View style={styles.adBanner}>
-//         <Text style={styles.adText}>
-//           Tired of ads? Try Quran Majeed Pro for 3 days free
-//         </Text>
-//         <TouchableOpacity style={styles.upgradeButton}>
-//           <Text style={styles.upgradeButtonText}>Upgrade Now</Text>
-//         </TouchableOpacity>
-//       </View>
-//     </ScrollView>
-//   );
-// };
+      <View style={styles.engagement}>
+        <Text style={styles.engagementTitle}>Quran Engagement Time</Text>
+        <View style={styles.engagementContent}>
+          <View style={styles.engagementItem}>
+            <Text style={styles.engagementText}>Yours this week</Text>
+            <Text style={styles.engagementTime}>1h 24m</Text>
+            <Text style={styles.engagementLifetime}>Lifetime: 144h 16m</Text>
+          </View>
+          <View style={styles.engagementItem}>
+            <Text style={styles.engagementText}>Sadqa Jaria Gift Pool</Text>
+            <TouchableOpacity style={styles.giftButton}>
+              <Text style={styles.giftButtonText}>Purchase Gifts</Text>
+            </TouchableOpacity>
+            <Text style={styles.engagementLifetime}>0 Quran copies gifted</Text>
+          </View>
+        </View>
+      </View>
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#F5F5F5",
-//   },
-//   header: {
-//     flexDirection: "row",
-//     justifyContent: "space-between",
-//     padding: 16,
-//   },
-//   time: {
-//     fontSize: 18,
-//     fontWeight: "bold",
-//   },
-//   icon: {
-//     width: 20,
-//     height: 20,
-//   },
-//   main: {
-//     alignItems: "center",
-//     padding: 16,
-//   },
-//   zohr: {
-//     fontSize: 24,
-//     fontWeight: "bold",
-//   },
-//   timeMain: {
-//     fontSize: 48,
-//     fontWeight: "bold",
-//   },
-//   date: {
-//     fontSize: 16,
-//     color: "#888",
-//   },
-//   zohrStart: {
-//     fontSize: 16,
-//     color: "#888",
-//     marginTop: 8,
-//   },
-//   grid: {
-//     flexDirection: "row",
-//     flexWrap: "wrap",
-//     justifyContent: "space-around",
-//     padding: 16,
-//   },
-//   gridItem: {
-//     alignItems: "center",
-//     margin: 8,
-//   },
-//   gridIcon: {
-//     width: 50,
-//     height: 50,
-//     marginBottom: 8,
-//   },
-//   gridText: {
-//     fontSize: 14,
-//     textAlign: "center",
-//   },
-//   engagement: {
-//     padding: 16,
-//     backgroundColor: "#FFF",
-//     margin: 16,
-//     borderRadius: 8,
-//     elevation: 2,
-//   },
-//   engagementTitle: {
-//     fontSize: 18,
-//     fontWeight: "bold",
-//     marginBottom: 16,
-//   },
-//   engagementContent: {
-//     flexDirection: "row",
-//     justifyContent: "space-around",
-//   },
-//   engagementItem: {
-//     alignItems: "center",
-//   },
-//   engagementText: {
-//     fontSize: 16,
-//     marginBottom: 8,
-//   },
-//   engagementTime: {
-//     fontSize: 24,
-//     fontWeight: "bold",
-//   },
-//   engagementLifetime: {
-//     fontSize: 14,
-//     color: "#888",
-//     marginTop: 4,
-//   },
-//   giftButton: {
-//     backgroundColor: "#28A745",
-//     padding: 8,
-//     borderRadius: 4,
-//     marginTop: 8,
-//   },
-//   giftButtonText: {
-//     color: "#FFF",
-//     fontSize: 14,
-//   },
-//   adBanner: {
-//     flexDirection: "row",
-//     justifyContent: "space-between",
-//     padding: 16,
-//     backgroundColor: "#FFEB3B",
-//     alignItems: "center",
-//   },
-//   adText: {
-//     fontSize: 14,
-//   },
-//   upgradeButton: {
-//     backgroundColor: "#FF5722",
-//     padding: 8,
-//     borderRadius: 4,
-//   },
-//   upgradeButtonText: {
-//     color: "#FFF",
-//     fontSize: 14,
-//   },
-// });
+      <View style={styles.adBanner}>
+        <Text style={styles.adText}>
+          Tired of ads? Try Quran Majeed Pro for 3 days free
+        </Text>
+        <TouchableOpacity style={styles.upgradeButton}>
+          <Text style={styles.upgradeButtonText}>Upgrade Now</Text>
+        </TouchableOpacity>
+      </View>
+    </ScrollView>
+  );
+};
 
-// export default App;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#F5F5F5",
+  },
+  header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 16,
+  },
+  time: {
+    fontSize: 18,
+    fontWeight: "bold",
+  },
+  icon: {
+    width: 20,
+    height: 20,
+  },
+  main: {
+    alignItems: "center",
+    padding: 16,
+  },
+  zohr: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  timeMain: {
+    fontSize: 48,
+    fontWeight: "bold",
+  },
+  date: {
+    fontSize: 16,
+    color: "#888",
+  },
+  zohrStart: {
+    fontSize: 16,
+    color: "#888",
+    marginTop: 8,
+  },
+  grid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-around",
+    padding: 16,
+  },
+  gridItem: {
+    alignItems: "center",
+    margin: 8,
+    flexDirection: "",
+  },
+  gridIcon: {
+    width: 50,
+    height: 50,
+    marginBottom: 8,
+    borderRadius: 50,
+    display: "block",
+  },
+  gridText: {
+    fontSize: 14,
+    textAlign: "center",
+  },
+  engagement: {
+    padding: 16,
+    backgroundColor: "#FFF",
+    margin: 16,
+    borderRadius: 8,
+    elevation: 2,
+  },
+  engagementTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginBottom: 16,
+  },
+  engagementContent: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  engagementItem: {
+    alignItems: "center",
+  },
+  engagementText: {
+    fontSize: 16,
+    marginBottom: 8,
+  },
+  engagementTime: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  engagementLifetime: {
+    fontSize: 14,
+    color: "#888",
+    marginTop: 4,
+  },
+  giftButton: {
+    backgroundColor: "#28A745",
+    padding: 8,
+    borderRadius: 4,
+    marginTop: 8,
+  },
+  giftButtonText: {
+    color: "#FFF",
+    fontSize: 14,
+  },
+  adBanner: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 16,
+    backgroundColor: "#FFEB3B",
+    alignItems: "center",
+  },
+  adText: {
+    fontSize: 14,
+  },
+  upgradeButton: {
+    backgroundColor: "#FF5722",
+    padding: 8,
+    borderRadius: 4,
+  },
+  upgradeButtonText: {
+    color: "#FFF",
+    fontSize: 14,
+  },
+});
+
+export default App;
 
 //-------------------------------Page generated from gemini.js-------------------------------
 
@@ -351,109 +363,261 @@
 
 //--------------------------Page generated from open chat gpts------------------------
 
-import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
-import quran from "./assets/Quran.json/quran-uthmani.json";
-import quranAsadTranslation from "./assets/Quran.json/quranAsadTranslation.json";
-import { useFonts } from "expo-font";
-const QuranPage = () => {
-  const [fontLoaded] = useFonts({
-    ottoman: require("../assets/fonts/ottoman.ttf"),
-  });
-  return (
-    <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headerText}>Juz 22</Text>
-        <Text style={styles.headerText}>441</Text>
-        <Text style={styles.headerText}>Ya-Seen</Text>
-      </View>
-      <View style={styles.verse}>
-        {/* {quranAsadTranslation.data.surahs.map(({ ayahs }, index) => {
-          return (
-            <View key={index}>
-              {ayahs.map(({ text, number }, i) => {
-                return (
-                  <Text style={styles.verseText} key={i}>
-                    <Text style={styles.verseNumber}>{number}. </Text> {text}
-                  </Text>
-                );
-              })}
-            </View>
-          );
-        })} */}
-        {quran.data.surahs.map(({ ayahs }, index) => {
-          return (
-            <View key={index} style={{ width: "50%" }}>
-              {ayahs.map(({ text, number }, i) => {
-                return (
-                  <Text style={styles.arabicText} key={i}>
-                    {text}
-                    {number}
-                  </Text>
-                );
-              })}
-            </View>
-          );
-        })}
-      </View>
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>Play</Text>
-        <Text style={styles.footerText}>Bookmarks</Text>
-        <Text style={styles.footerText}>Auto Scroll</Text>
-        <Text style={styles.footerText}>Share</Text>
-        <Text style={styles.footerText}>Translation</Text>
-        <Text style={styles.footerText}>More</Text>
-      </View>
-    </ScrollView>
-  );
-};
+// import React from "react";
+// import { View, Text, StyleSheet, ScrollView } from "react-native";
+// import quran from "./assets/Quran.json/quran-uthmani.json";
+// import quranAsadTranslation from "./assets/Quran.json/quranAsadTranslation.json";
+// import { useFonts } from "expo-font";
+// const QuranPage = () => {
+//   const [fontLoaded] = useFonts({
+//     ottoman: require("../assets/fonts/ottoman.ttf"),
+//   });
+//   return (
+//     <ScrollView style={styles.container}>
+//       <View style={styles.header}>
+//         <Text style={styles.headerText}>Juz 22</Text>
+//         <Text style={styles.headerText}>441</Text>
+//         <Text style={styles.headerText}>Ya-Seen</Text>
+//       </View>
+//       <View style={styles.verse}>
+//         {/* {quranAsadTranslation.data.surahs.map(({ ayahs }, index) => {
+//           return (
+//             <View key={index}>
+//               {ayahs.map(({ text, number }, i) => {
+//                 return (
+//                   <Text style={styles.verseText} key={i}>
+//                     <Text style={styles.verseNumber}>{number}. </Text> {text}
+//                   </Text>
+//                 );
+//               })}
+//             </View>
+//           );
+//         })} */}
+//         {quran.data.surahs.map(({ ayahs }, index) => {
+//           return (
+//             <View key={index} style={{ width: "50%" }}>
+//               {ayahs.map(({ text, number }, i) => {
+//                 return (
+//                   <Text style={styles.arabicText} key={i}>
+//                     {text}
+//                     {number}
+//                   </Text>
+//                 );
+//               })}
+//             </View>
+//           );
+//         })}
+//       </View>
+//       <View style={styles.footer}>
+//         <Text style={styles.footerText}>Play</Text>
+//         <Text style={styles.footerText}>Bookmarks</Text>
+//         <Text style={styles.footerText}>Auto Scroll</Text>
+//         <Text style={styles.footerText}>Share</Text>
+//         <Text style={styles.footerText}>Translation</Text>
+//         <Text style={styles.footerText}>More</Text>
+//       </View>
+//     </ScrollView>
+//   );
+// };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#edf2f4",
-  },
-  header: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    paddingVertical: 10,
-    backgroundColor: "#2b2d42",
-    alignItems: "center",
-  },
-  headerText: {
-    color: "#fff",
-    fontSize: 18,
-  },
-  verse: {
-    padding: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#8d99ae",
-    flexDirection: "row",
-  },
-  verseNumber: {
-    fontSize: 16,
-    fontWeight: "bold",
-  },
-  verseText: {
-    fontSize: 16,
-    marginVertical: 5,
-    width: "50%",
-  },
-  arabicText: {
-    fontSize: 24,
-    textAlign: "right",
-    color: "#2b2d42",
-  },
-  footer: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    paddingVertical: 10,
-    backgroundColor: "#2b2d42",
-  },
-  footerText: {
-    color: "#fff",
-    fontSize: 14,
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: "#edf2f4",
+//   },
+//   header: {
+//     flexDirection: "row",
+//     justifyContent: "space-around",
+//     paddingVertical: 10,
+//     backgroundColor: "#2b2d42",
+//     alignItems: "center",
+//   },
+//   headerText: {
+//     color: "#fff",
+//     fontSize: 18,
+//   },
+//   verse: {
+//     padding: 10,
+//     borderBottomWidth: 1,
+//     borderBottomColor: "#8d99ae",
+//     flexDirection: "row",
+//   },
+//   verseNumber: {
+//     fontSize: 16,
+//     fontWeight: "bold",
+//   },
+//   verseText: {
+//     fontSize: 16,
+//     marginVertical: 5,
+//     width: "50%",
+//   },
+//   arabicText: {
+//     fontSize: 24,
+//     textAlign: "right",
+//     color: "#2b2d42",
+//   },
+//   footer: {
+//     flexDirection: "row",
+//     justifyContent: "space-around",
+//     paddingVertical: 10,
+//     backgroundColor: "#2b2d42",
+//   },
+//   footerText: {
+//     color: "#fff",
+//     fontSize: 14,
+//   },
+// });
 
-export default QuranPage;
+// export default QuranPage;
+
+//--------------------Working code -------------------------
+
+// import React, { useRef, useState } from "react";
+// import {
+//   View,
+//   Text,
+//   StyleSheet,
+//   FlatList,
+//   ActivityIndicator,
+//   SectionList,
+// } from "react-native";
+// import { FlashList } from "@shopify/flash-list";
+// import { SafeAreaView } from "react-native-safe-area-context";
+// import quranMergedTranslation from "./assets/Quran.json/quranMergedTranslation";
+
+// const InnerList = ({ data, onInnerListScroll }) => {
+//   const innerListRef = useRef(null);
+
+//   return (
+//     <FlatList
+//       ref={innerListRef}
+//       data={data}
+//       keyExtractor={(item) => item.number}
+//       renderItem={({ item }) => (
+//         <View style={styles.verse}>
+//           <Text style={styles.verseText}>
+//             <Text style={styles.verseNumber}>{item.number}. </Text>
+//             {item.text}
+//           </Text>
+//           <Text style={styles.arabicText}>{item.arabicText}</Text>
+//         </View>
+//       )}
+//       estimatedItemSize={50} // Provide an estimated item size for better performance
+//       scrollEnabled={true}
+//       onScroll={({ nativeEvent }) => {
+//         const { contentOffset, contentSize, layoutMeasurement } = nativeEvent;
+//         const isBottomReached =
+//           contentOffset.y + layoutMeasurement.height >= contentSize.height - 20;
+//         if (isBottomReached) {
+//           onInnerListScroll();
+//         }
+//       }}
+//     />
+//   );
+// };
+
+// const OuterList = () => {
+//   const outerListRef = useRef(null);
+//   const [scrollIndex, setScrollIndex] = useState(0);
+
+//   const handleInnerListScroll = () => {
+//     setScrollIndex((prevIndex) => prevIndex + 1);
+//     outerListRef.current.scrollToIndex({ index: scrollIndex + 1 });
+//   };
+
+//   return quranMergedTranslation.data.surahs ? (
+//     <FlatList
+//       ref={outerListRef}
+//       data={quranMergedTranslation.data.surahs}
+//       keyExtractor={(item) => item.number}
+//       renderItem={({ item }) => (
+//         <View style={styles.outerItem}>
+//           <Text style={styles.title}>{item.title}</Text>
+//           <InnerList
+//             data={item.ayahs}
+//             onInnerListScroll={handleInnerListScroll}
+//           />
+//         </View>
+//       )}
+//       estimatedItemSize={150} // Provide an estimated item size for better performance
+//     />
+//   ) : (
+//     <ActivityIndicator />
+//   );
+// };
+
+// const App = () => (
+//   <SafeAreaView style={styles.container}>
+//     <OuterList />
+//   </SafeAreaView>
+// );
+
+// const styles = StyleSheet.create({
+//   outerItem: {
+//     marginBottom: 20,
+//     // backgroundColor: "#f9c2ff",
+//     // padding: 20,
+//     borderRadius: 10,
+//   },
+//   title: {
+//     fontSize: 18,
+//     fontWeight: "bold",
+//   },
+//   innerItem: {
+//     backgroundColor: "#e2e2e2",
+//     padding: 10,
+//     marginVertical: 5,
+//     borderRadius: 5,
+//   },
+
+//   //------------------------------ style from Quran
+
+//   container: {
+//     flex: 1,
+//     backgroundColor: "#edf2f4",
+//   },
+//   header: {
+//     flexDirection: "row",
+//     justifyContent: "space-around",
+//     paddingVertical: 10,
+//     backgroundColor: "#2b2d42",
+//     alignItems: "center",
+//   },
+//   headerText: {
+//     color: "#fff",
+//     fontSize: 18,
+//   },
+//   verse: {
+//     padding: 10,
+//     borderBottomWidth: 1,
+//     borderBottomColor: "#8d99ae",
+//     flexDirection: "row",
+//   },
+//   verseNumber: {
+//     fontSize: 16,
+//     fontWeight: "bold",
+//   },
+//   verseText: {
+//     fontSize: 16,
+//     marginVertical: 5,
+//     width: "50%",
+//   },
+//   arabicText: {
+//     fontSize: 24,
+//     textAlign: "right",
+//     color: "#2b2d42",
+//     fontFamily: "ottoman",
+//   },
+//   footer: {
+//     flexDirection: "row",
+//     justifyContent: "space-around",
+//     paddingVertical: 10,
+//     backgroundColor: "#2b2d42",
+//   },
+//   footerText: {
+//     color: "#fff",
+//     fontSize: 14,
+//   },
+// });
+
+// export default App;
