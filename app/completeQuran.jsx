@@ -72,7 +72,7 @@ const App = () => {
   const [currentView, setCurrentView] = useState(currentView);
   const [showSurahs, setShowSurahs] = useState(false);
   const [loaded, error] = useFonts({
-    ottoman: require("../assets/fonts/ottoman.ttf"),
+    uthmani: require("../assets/fonts/KFGQPC Uthmanic Script HAFS Regular.otf"),
   });
 
   const sectionListRef = useRef(null);
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
     width: "50%",
     marginVertical: 5,
     paddingStart: 5,
-    // fontFamily: "ottoman",
+    fontFamily: "uthmani",
   },
   header: {
     flexDirection: "row",
